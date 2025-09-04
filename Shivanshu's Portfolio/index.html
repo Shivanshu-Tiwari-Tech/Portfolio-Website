@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivanshu's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .typed-cursor {
+            color: #7D19CE;
+        }
+
+        /* Creative Background Animation */
+        body {
+            background-color: #0d0c1d;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50vh;
+            left: -50vw;
+            width: 200vw;
+            height: 200vh;
+            background: radial-gradient(circle, rgba(125, 25, 206, 0.4) 0%, transparent 40%),
+                radial-gradient(circle, rgba(62, 2, 107, 0.6) 0%, transparent 45%),
+                radial-gradient(circle, rgba(16, 2, 44, 0.8) 0%, transparent 50%);
+            animation: pulse 15s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translate(0, 0);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.1) translate(-50px, 30px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1) translate(0, 0);
+                opacity: 0.8;
+            }
+        }
+
+        .section-container {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-button {
+            background: linear-gradient(90deg, #7D19CE, #b152f7);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(125, 25, 206, 0.4);
+        }
+
+        .gradient-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(125, 25, 206, 0.6);
+        }
+
+        .gradient-border {
+            border-image: linear-gradient(45deg, #7D19CE, #b152f7) 1;
+            border-width: 2px;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body class="text-white font-inter">
+
+    <!-- Navbar -->
+    <nav
+        class="bg-transparent h-16 flex items-center justify-between px-4 sm:px-8 md:px-12 backdrop-filter backdrop-blur-sm fixed top-0 left-0 w-full z-50">
+        <div class="font-bold text-xl sm:text-2xl text-[#7E1ED8]">
+            <a href="#">Shivanshu's Portfolio</a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button id="menu-button" class="text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- Desktop Menu -->
+        <div id="nav-menu" class="hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+            <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+                <li><a href="#about" class="hover:text-[#7D19CE] transition duration-300">About</a></li>
+                <li><a href="#skills" class="hover:text-[#7D19CE] transition duration-300">Skills</a></li>
+                <li><a href="#projects" class="hover:text-[#7D19CE] transition duration-300">Projects</a></li>
+                <li><a href="#contact" class="hover:text-[#7D19CE] transition duration-300">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- First Section (Hero) -->
+        <section id="hero" class="flex flex-col-reverse md:flex-row items-center justify-between my-16 md:my-24 pt-16">
+            <div class="text-center md:text-left md:w-1/2">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                    Hi, I am <span class="text-[#7D19CE]">Shivanshu</span>
+                </div>
+                <div class="text-xl sm:text-2xl md:text-3xl font-semibold mb-6">
+                    And I am a <span id="element" class="text-[#7D19CE]"></span>
+                </div>
+                <p class="text-lg mb-8">
+                    A passionate developer with experience in building web applications and exploring the world of cyber
+                    security.
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row justify-center md:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="gradient-button text-white px-6 py-3 rounded-full font-semibold">
+                        Download CV
+                    </button>
+                    <button
+                        class="bg-gray-800 text-[#7D19CE] px-6 py-3 rounded-full font-semibold border border-purple-600 hover:bg-gray-700 transition duration-300">
+                        Connect with me
+                    </button>
+                </div>
+            </div>
+            <div class="w-4/5 md:w-1/2 mt-8 md:mt-0">
+                <img src="shivanshu Image.png" alt="Personal Image"
+                    class="rounded-full border-4 border-purple-600 w-full max-w-sm mx-auto">
+            </div>
+        </section>
+
+        <!-- Second Section (About) -->
+        <section id="about" class="my-16 md:my-24">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">About <span class="text-[#7D19CE]">Me</span>
+            </h2>
+            <div class="section-container rounded-lg p-8 shadow-2xl">
+                <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                    <div class="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                        <img src="shivanshu Image.png" alt="About Image"
+                            class="rounded-lg shadow-lg w-full max-w-md mx-auto">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <p class="text-lg leading-relaxed">
+                            Hello! My name is Shivanshu and I am a passionate Full Stack Developer, an enthusiastic
+                            Cyber Security expert, and a dedicated Data Analyst. I enjoy learning and exploring new
+                            technologies to solve complex problems and build innovative solutions. My journey in the
+                            tech world has equipped me with a diverse skill set, allowing me to approach challenges from
+                            multiple perspectives.
+                        </p>
+                        <p class="text-lg leading-relaxed mt-4">
+                            I am committed to creating efficient, secure, and user-friendly applications that make a
+                            difference. I'm always looking for new opportunities to learn and grow, and I love
+                            collaborating on exciting projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Third Section (Skills) -->
+        <section id="skills" class="my-16 md:my-24">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">My <span class="text-[#7D19CE]">Skills</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card -->
+                <div
+                    class="bg-gray-800 p-8 rounded-lg shadow-lg text-center transition-transform hover:scale-105 duration-300">
+                    <i class="ri-code-s-slash-line text-4xl text-[#7D19CE] mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2">Web Development</h3>
+                    <p class="text-md text-gray-400">
+                        Proficient in HTML, CSS, JavaScript, and modern frameworks like React and Node.js.
+                    </p>
+                </div>
+                <!-- Skill Card -->
+                <div
+                    class="bg-gray-800 p-8 rounded-lg shadow-lg text-center transition-transform hover:scale-105 duration-300">
+                    <i class="ri-shield-check-line text-4xl text-[#7D19CE] mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2">Cyber Security</h3>
+                    <p class="text-md text-gray-400">
+                        Experience with penetration testing, network security, and secure coding practices.
+                    </p>
+                </div>
+                <!-- Skill Card -->
+                <div
+                    class="bg-gray-800 p-8 rounded-lg shadow-lg text-center transition-transform hover:scale-105 duration-300">
+                    <i class="ri-database-2-line text-4xl text-[#7D19CE] mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2">Data Analysis</h3>
+                    <p class="text-md text-gray-400">
+                        Skilled in data manipulation, visualization, and interpretation using Python and SQL.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fourth Section (Projects) -->
+        <section id="projects" class="my-16 md:my-24">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">My <span class="text-[#7D19CE]">Projects</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project Card -->
+                <div
+                    class="section-container p-6 rounded-lg shadow-2xl transition-transform hover:scale-105 duration-300">
+                    <img src="Webapp.png" alt="Project 1" class="rounded-lg mb-4 w-full">
+                    <h3 class="text-xl font-semibold mb-2">Project 1: Web App</h3>
+                    <p class="text-gray-400 mb-4">This project is a functional mockup of a professional web application
+                        dashboard. It provides a clean and intuitive user interface for tracking key metrics and
+                        activities, such as total views, project status, and recent updates. The responsive design
+                        ensures a consistent user experience across all devices, making it a valuable showcase of a
+                        polished and scalable UI/UX.</p>
+                    <a href="#" class="text-[#7D19CE] hover:underline">View Project &rarr;</a>
+                </div>
+                <!-- Project Card -->
+                <div
+                    class="section-container p-6 rounded-lg shadow-2xl transition-transform hover:scale-105 duration-300">
+                    <img src="Data Analysis Dashboard ss.png" alt="Project 2"
+                        class="rounded-lg mb-4 w-full">
+                    <h3 class="text-xl font-semibold mb-2">Project 2: Data Analysis Dashboard</h3>
+                    <p class="text-gray-400 mb-4">This project is a clean, responsive data dashboard mockup designed to
+                        visualize key business metrics and provide actionable insights. The intuitive user interface
+                        presents data in a clear and organized manner, ensuring users can quickly understand performance
+                        trends. It's a great example of a modern, data-driven application.</p>
+                    <a href="#" class="text-[#7D19CE] hover:underline">View Project &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fifth Section (Contact) -->
+        <section id="contact" class="my-16 md:my-24">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Contact <span class="text-[#7D19CE]">Me</span>
+            </h2>
+            <div class="section-container p-8 rounded-lg shadow-2xl max-w-xl mx-auto">
+                <form id="contact-form">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-300">Your Name</label>
+                        <input type="text" id="name" name="name"
+                            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-purple-500 focus:border-purple-500"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-300">Your Email</label>
+                        <input type="email" id="email" name="email"
+                            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-purple-500 focus:border-purple-500"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm text-white focus:ring-purple-500 focus:border-purple-500"
+                            required></textarea>
+                    </div>
+                    <div class="text-center mb-4">
+                        <button type="submit"
+                            class="gradient-button text-white px-6 py-3 rounded-full font-semibold w-full sm:w-auto">
+                            Send Message
+                        </button>
+                    </div>
+                    <div id="status-message" class="hidden text-center text-sm font-medium"></div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-center py-4 text-gray-400">
+        <p>&copy; 2024 Shivanshu. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        // Typed.js initialization
+        var typed = new Typed('#element', {
+            strings: ['Web Developer.', 'Cyber Security Enthusiast.', 'Data Analyst.'],
+            typeSpeed: 50,
+            loop: true
+        });
+
+        // Hamburger menu functionality
+        const menuButton = document.getElementById('menu-button');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('absolute');
+            navMenu.classList.toggle('top-16');
+            navMenu.classList.toggle('left-0');
+            navMenu.classList.toggle('w-full');
+            navMenu.classList.toggle('bg-[#260455]');
+            navMenu.classList.toggle('p-4');
+            navMenu.classList.toggle('shadow-lg');
+            navMenu.classList.toggle('flex');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') {
+                    // Do nothing for the home link
+                    return;
+                }
+
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu after clicking a link
+                if (!navMenu.classList.contains('hidden')) {
+                    navMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Form submission and status message
+        const form = document.getElementById('contact-form');
+        const statusMessage = document.getElementById('status-message');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Simulate form submission
+            // In a real application, you would send this data to a backend server.
+            console.log("Form submitted!");
+
+            // Display success message
+            showMessage("Thank you! Your message has been sent.", 'success');
+
+            // Clear the form
+            form.reset();
+        });
+
+        function showMessage(msg, type) {
+            statusMessage.textContent = msg;
+            statusMessage.classList.remove('text-green-500', 'text-red-500');
+            statusMessage.classList.add('block');
+
+            if (type === 'success') {
+                statusMessage.classList.add('text-green-500');
+            } else if (type === 'error') {
+                statusMessage.classList.add('text-red-500');
+            }
+
+            setTimeout(() => {
+                statusMessage.classList.remove('block');
+                statusMessage.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>
